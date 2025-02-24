@@ -1,8 +1,9 @@
-from sklearn.linear_model import LinearRegression
-from sklearn.neighbors import KNeighborsRegressor
+# from sklearn.linear_model import LinearRegression
+# from sklearn.neighbors import KNeighborsRegressor
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+from tglearn import LinearRegression
 
 ls = pd.read_csv("https://github.com/ageron/data/raw/main/lifesat/lifesat.csv")
 
