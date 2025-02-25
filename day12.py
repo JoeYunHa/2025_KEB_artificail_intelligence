@@ -12,3 +12,14 @@ df = pd.DataFrame(
     }
 )
 print(df)
+
+# using option 3 -> median
+median = df.median()
+df.fillna(median, inplace=True)
+
+print(df)
+
+# using SimpleImputer
+imputer = SimpleImputer(strategy='mean')
+df[['A','B']] = imputer.fit_transform(df[['A','B']])
+print(df)
