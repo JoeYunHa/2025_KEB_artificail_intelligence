@@ -60,12 +60,17 @@ class KNeighborsRegressor:
         for idx in range(len(self.X_train)):
             diff_dict[f'{idx}'] = abs(self.X_train[idx] - X_test)
 
-        indices = list(diff_dict.keys())[:self.n_neighbors]
-        sum = 0
-        for i in indices:
-            sum += self.y_train[int(i)]
+        sorted_diff_dict = sorted(diff_dict.items(), key=lambda x:x[1])
 
-        return sum / self.n_neighbors
+        indices = list(map(lambda x: x[0], sorted_diff_dict))[:self.n_neighbors]
+
+        # print(indices)
+        s = 0
+        for i in indices:
+            # print(self.y_train[int(i)])
+            s += self.y_train[int(i)]
+        # print(s)
+        return s / self.n_neighbors
 
 
 
