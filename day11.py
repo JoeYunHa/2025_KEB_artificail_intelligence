@@ -13,6 +13,7 @@ ls = pd.read_csv("https://github.com/ageron/data/raw/main/lifesat/lifesat.csv")
 
 X = ls[["GDP per capita (USD)"]].values
 y = ls[["Life satisfaction"]].values
+
 # print(ls)
 
 # ls.plot(kind='scatter', grid=True ,
@@ -26,5 +27,6 @@ model.fit(X,y)
 
 X_new = [[31721.3]]
 print(model.predict(X_new))
+
 # LinearRegression 5.90
 # KNeighborsRegressor 5.7
